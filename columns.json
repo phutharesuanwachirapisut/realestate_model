@@ -1,0 +1,1 @@
+{"columns": ["Property_Type", "Location", "Size_sq_m", "Furnished", "Bedrooms", "Bathrooms", "Year"], "cat_features": ["Property_Type", "Location", "Furnished"]}
