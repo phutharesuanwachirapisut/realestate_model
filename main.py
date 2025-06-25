@@ -19,13 +19,12 @@ with open("columns.json", "r") as f:
 column_order = meta["columns"]
 cat_features = meta["cat_features"]
 
-# 🔍 Preprocessing function (เหมือนใน notebook)
+# 🔍 Preprocessing function (ใช้ Year ตรง ๆ แล้ว)
 def preprocess_input(data: dict):
     df = pd.DataFrame([data])
 
-    # คำนวณอายุบ้าน
-    df["Year"] = datetime.date.today().year - df["Year_Built"]
-    df.drop(columns=["Year_Built"], inplace=True)
+    # ✅ ไม่แปลง Year แล้ว ใช้ตรง ๆ เลย
+    # ✅ ไม่ต้องลบ Year_Built แล้ว เพราะไม่มีใน input แล้ว
 
     # จัดเรียงคอลัมน์ให้ตรง
     for col in column_order:
